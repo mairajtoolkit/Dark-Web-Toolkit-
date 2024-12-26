@@ -9,7 +9,7 @@
         
         body {
             font-family: 'Orbitron', sans-serif;
-            background: radial-gradient(circle at center, #0f2027, #203a43, #2c5364);
+            background: linear-gradient(to right, #1a1a1a, #333);
             color: #fff;
             margin: 0;
             padding: 0;
@@ -21,7 +21,32 @@
         }
 
         .login-container {
-            background: rgba(0, 0, 0, 0.8);
+            background: linear-gradient(45deg, 
+    red, 
+    orange, 
+    yellow, 
+    green, 
+    blue, 
+    indigo, 
+    violet, 
+    black, 
+    white, 
+    transparent 
+);
+animation: colors 10s infinite linear;
+
+@keyframes colors {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+    background-size: 600% 600%;
+    animation: rainbowBackground 5s ease infinite;
+    padding: 1px 20px; /* Reduced padding to decrease the gap */
+    color: white;
             padding: 40px;
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 255, 245, 0.8);
@@ -41,7 +66,7 @@
 
         p {
             font-size: 1.2em;
-            color: #00fff5;
+            color: #000000;
             margin-bottom: 20px;
         }
 
@@ -59,7 +84,7 @@
             outline: none;
             font-size: 1.5em;
             background-color: #0f2027;
-            color: #00fff5;
+            color: #ffff00;
             box-shadow: 0 0 20px rgba(0, 255, 245, 0.8);
             text-align: center;
             margin-bottom: 20px;
@@ -115,7 +140,7 @@
 
         footer {
             font-size: 0.9em;
-            color: #00fff5;
+            color: #000000;
             margin-top: 20px;
         }
 
@@ -204,8 +229,8 @@
 <body>
 
 <div class="login-container">
-    <h1>Welcome to EBEE TOOLKIT 2.0</h1>
-    <p>The Super Powerful TOOLKIT Ever Made By AtomCyberForce 🇵🇸</p>
+    <h1>Welcome to DARK WEB TOOLKIT</h1>
+    <p>The Super Powerful TOOLKIT Ever Made By ADEN TECH 🇵🇸</p>
     <div class="activation-key-container">
         <input type="text" id="activationKey" class="activation-key" readonly>
         <button class="copy-btn" onclick="copyActivationKey()">
@@ -215,9 +240,9 @@
     <button class="submit-btn" onclick="checkActivationKey()">Submit</button>
     <button class="redirect-btn" onclick="redirectToSample()">Sample Page</button>
     <p class="error-message" id="errorMessage"></p>
-    <p>This Is An Project In PartnerShip With Aden Tech And AtomCyberForce</p>
-    <footer>To activate your key, contact +92 344 306 2524</footer>
+       <footer>To activate your key, contact +92 336 6824220</footer>
 </div>
 
 </body>
 </html>
+
