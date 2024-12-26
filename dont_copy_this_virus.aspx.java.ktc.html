@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,8 +10,29 @@
 
 body {
     font-family: 'Orbitron', sans-serif;
-    background: radial-gradient(circle at center, #0f2027, #203a43, #2c5364);
-    color: #fff;
+    background: linear-gradient(45deg, 
+        #000000,
+        #ff0000, 
+        #ff7f00, 
+        #ffff00, 
+        #00ff00, 
+        #0000ff, 
+        #7f00ff, 
+        #ff00ff, 
+        #000000, 
+        transparent 
+    ); /* Rainbow gradient with transparent ending */
+    animation: colors 10s infinite linear; /* Smooth color animation */
+
+    @keyframes colors {
+      0% {
+        background-position: 0%;
+      }
+      100% {
+        background-position: 100%;
+      }
+    }
+    color: #fff; /* White text for readability */
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -19,16 +41,16 @@ body {
 header, footer {
     text-align: center;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.8);
-    border-bottom: 2px solid #00fff5;
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent dark background */
+    border-bottom: 2px solid #00fff5; /* Blue border */
+    text-shadow: 0 0 20px rgba(0, 255, 245, 1); /* Blue text shadow */
 }
 
 h1 {
     font-size: 1.8em;
     margin: 0;
     text-transform: uppercase;
-    color: #00fff5;
-    text-shadow: 0 0 20px rgba(0, 255, 245, 1);
+    color: #00fff5; /* Bright blue text */
 }
 
 .search-container {
@@ -40,14 +62,13 @@ h1 {
     padding: 15px;
     width: 80%;
     max-width: 600px;
-    border: none;
+    border: none; /* Remove border */
     border-radius: 50px;
     outline: none;
     font-size: 1.5em;
-    background-color: #0f2027;
-    color: #00fff5;
-    box-shadow: 0 0 20px rgba(0, 255, 245, 0.8);
-    text-align: center;
+    background-color: #0f2027; /* Dark background for search bar */
+    color: #00fff5; /* Bright blue text */
+    box-shadow: 0 0 20px rgba(0, 255, 245, 0.8); /* Blue box shadow */
 }
 
 .tool-options-container {
@@ -63,16 +84,17 @@ h1 {
 .tool-option {
     display: flex;
     align-items: center;
-    background: rgba(0, 255, 245, 0.1);
-    border: 2px solid #00fff5;
+    background: rgba(0, 255, 245, 0.1); /* Semi-transparent background */
+    border: 2px solid #000000; /* Blue border */
     border-radius: 10px;
     padding: 15px;
     width: calc(100% - 40px);
     max-width: 300px;
     transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
-    opacity: 0;
+    opacity: 0; /* Initially hidden */
     margin: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 245, 0.5); /* Blue box shadow */
 }
 
 .tool-option img {
@@ -80,12 +102,12 @@ h1 {
     height: 60px;
     border-radius: 10px;
     margin-right: 20px;
-    box-shadow: 0 0 15px rgba(0, 255, 245, 0.5);
+    box-shadow: 0 0 15px rgba(0, 255, 245, 0.5); /* Blue box shadow */
 }
 
 .tool-option span {
     font-size: 1.2em;
-    color: #00fff5;
+    color: #000000;
 }
 
 footer {
@@ -150,14 +172,14 @@ p {
 <body style="user-select: none;" oncopy="return false;">
 
 <header>
-    <h1>EBEE-TOOLKIT 2.0</h1>
+    <h1>DARK WEB TOOLKIT</h1>
 </header>
-<p>A PROJECT BY ATOMCYBERFORCE 🇵🇸</p>
+<p>A PROJECT BY ADEN TECH 🇵🇸</p>
 
 <div class="search-container">
     <input type="text" id="toolSearch" placeholder="Search tools...">
 </div>
-  <div class="tool-option" data-url="https://drive.google.com/drive/folders/1wjxulWhuQQMfprEu8aospNNaOueSVrUc?usp=drive_link" onclick="redirectToUrl(this)">
+    <div class="tool-option" data-url="https://drive.google.com/drive/folders/1wjxulWhuQQMfprEu8aospNNaOueSVrUc?usp=drive_link" onclick="redirectToUrl(this)">
         <img src="igh.jpg" alt="Example Tool 3">
         <span>InstaGram Hacking Method</span>
     </div>
@@ -434,6 +456,7 @@ p {
         <span>Kashif Majeed FB Course</span>
     </div>
 </div>
+</div>
 
 <footer>
     <p>We are not responsible for any misuse of these tools. Use at your own risk.</p>
@@ -448,36 +471,4 @@ p {
     // Search functionality
     document.getElementById('toolSearch').addEventListener('input', function () {
         const filter = this.value.toLowerCase();
-        const toolOptions = document.getElementsByClassName('tool-option');
-        
-        for (let i = 0; i < toolOptions.length; i++) {
-            const option = toolOptions[i];
-            const text = option.textContent || option.innerText;
-            if (text.toLowerCase().includes(filter)) {
-                option.style.display = "";
-            } else {
-                option.style.display = "none";
-            }
-        }
-    });
-
-    // Scroll animations
-    document.addEventListener('scroll', function () {
-        const toolOptions = document.querySelectorAll('.tool-option');
-        let delay = 0;
-
-        toolOptions.forEach((option, index) => {
-            const rect = option.getBoundingClientRect();
-            if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
-                setTimeout(() => {
-                    option.style.opacity = '1';
-                    option.classList.add(index % 2 === 0 ? 'slide-in-left' : 'slide-in-right');
-                }, delay);
-                delay += 150;
-            }
-        });
-    });
-</script>
-
-</body>
-</html>
+        const toolOptions = d
